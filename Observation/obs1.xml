@@ -1,0 +1,44 @@
+<template>
+    <name>Observation</name>
+    <declaration>clock x;</declaration>
+    <location id="id1">
+        <name>state1</name>
+    </location>
+    <location id="id2">
+        <name>state2</name>
+    </location>
+    <location id="id3">
+        <name>state3</name>
+    </location>
+    <location id="id4">
+        <name>state4</name>
+    </location>
+    <location id="id5">
+        <name>end_of_obs</name>
+    </location>
+    <init ref="id1" />
+    <transition>
+        <source ref="id1" />
+        <target ref="id2" />
+        <label kind="synchronisation">a?</label>
+        <label kind="guard">x==4</label>
+    </transition>
+    <transition>
+        <source ref="id2" />
+        <target ref="id3" />
+        <label kind="synchronisation">b?</label>
+        <label kind="guard">x==8</label>
+    </transition>
+    <transition>
+        <source ref="id3" />
+        <target ref="id4" />
+        <label kind="synchronisation">a?</label>
+        <label kind="guard">x==11</label>
+    </transition>
+    <transition>
+        <source ref="id4" />
+        <target ref="id5" />
+        <label kind="synchronisation">a?</label>
+        <label kind="guard">x==14</label>
+    </transition>
+</template>
